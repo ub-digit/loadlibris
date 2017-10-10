@@ -1,5 +1,5 @@
 #!/bin/bash
-base_dir="/home/koha/librisload"
+base_dir="/home/koha/loadlibris"
 koha_user="koha"
 koha_shell_bin="$base_dir/koha-shell"
 #in_dir="$base_dir/in"
@@ -42,7 +42,7 @@ done
 
 for filepath in $(find "$bulkmarcimport_in_dir" -name '*.marc' | sort); do
   filename=$(basename "$filepath")
-  errors=$($koha_shell_bin -c /home/koha/koha-lab/current/misc/migration_tools/bulkmarcimport.pl\ -b\ -file\ \"/home/koha/librisload/bulkmarcimport_in/GUB.20171004.marc\"\ -append\ -c\=MARC21\ -match\=\"System-control-number,035a\"\ -tomarcplugin\ \"Koha::Plugin::Se::Ub::Gu::MarcImport\" $koha_instance 2>&1 1>/dev/null)
+  errors=$($koha_shell_bin -c /home/koha/koha-lab/current/misc/migration_tools/bulkmarcimport.pl\ -b\ -file\ \"$filepath\"\ -append\ -c\=MARC21\ -match\=\"System-control-number,035a\"\ -tomarcplugin\ \"Koha::Plugin::Se::Ub::Gu::MarcImport\" $koha_instance 2>&1 1>/dev/null)
   if [ $? -eq 0 ]; then
     log_info "bulkmarcimport successfully processed \"$filename\""
     mv "$filepath" "$done_dir/"
