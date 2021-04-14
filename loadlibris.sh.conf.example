@@ -4,13 +4,10 @@ koha_path="/path/to/koha/root"
 
 data_dir="/opt/loadlibris"
 
-in_dir="/path/to/librload/in"
-
+in_dir="/opt/fetchlibris/done"
 in_archive_dir="$data_dir/in_archive"
-adjustlibris_err_dir="$data_dir/adjustlibris_err"
-adjustlibris_path="/path/to/adjustlibris"
 
-bulkmarcimport_in_dir="$data_dir/bulkmarcimport_in"
+bulkmarcimport_in_dir="/opt/fetchlibris/done"
 bulkmarcimport_err_dir="$data_dir/bulkmarcimport_err"
 bulkmarcimport_log_file="$data_dir/log/bulkmarcimport"
 
