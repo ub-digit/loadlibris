@@ -5,11 +5,11 @@ source "$script_dir/loadlibris.sh.conf"
 koha_shell_bin="$script_dir/koha-shell"
 
 function log_error {
-  logger -s -p syslog.err "$1" 2>> "$loadlibris_log_dir"
+  logger -s -p syslog.err "$1" 2>> "$loadlibris_log_dir/loadlibris"
 }
 
 function log_info {
-  logger -s -p syslog.info "$1" 2>> "$loadlibris_log_dir"
+  logger -s -p syslog.info "$1" 2>> "$loadlibris_log_dir/loadlibris"
 }
 
 for filepath in $(find "$in_dir" -name '*.marc' | sort); do
