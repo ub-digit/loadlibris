@@ -4,7 +4,7 @@ koha_path="/path/to/koha/root"
 
 data_dir="/opt/loadlibris"
 
-in_dir="/opt/fetchlibris/done"
+fetchlibris_done_dir="/opt/fetchlibris/done"
 
 bulkmarcimport_in_dir="$data_dir/in"
 bulkmarcimport_err_dir="$data_dir/bulkmarcimport_err"
@@ -16,4 +16,4 @@ bulkmarcimport_match="System-control-number,035a"
 
 loadlibris_log_dir="$data_dir/log"
 
-done_dir="$data_dir/done"
+bulkmarcimport_done_dir="$data_dir/done"
