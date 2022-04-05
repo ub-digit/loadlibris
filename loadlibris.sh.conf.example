@@ -5,10 +5,10 @@ koha_path="/path/to/koha/root"
 data_dir="/opt/loadlibris"
 
 in_dir="/opt/fetchlibris/done"
-in_archive_dir="$data_dir/in_archive"
 
-bulkmarcimport_in_dir="/opt/fetchlibris/done"
+bulkmarcimport_in_dir="$data_dir/in"
 bulkmarcimport_err_dir="$data_dir/bulkmarcimport_err"
+bulkmarcimport_in_archive_dir="$data_dir/in_archive"
 
 bulkmarcimport_bin="$koha_path/misc/migration_tools/bulkmarcimport.pl"
 bulkmarcimport_to_marc_plugin="Koha::Plugin::Se::Ub::Gu::MarcImport"

@@ -14,7 +14,7 @@ function log_info {
 
 for filepath in $(find "$in_dir" -name '*.marc' | sort); do
   # Archive all incoming files
-  cp "$filepath" "$in_archive_dir/"
+  cp "$filepath" "$bulkmarcimport_in_archive_dir/"
   mv "$filepath" "$bulkmarcimport_in_dir/"
 done
 
