@@ -7,10 +7,9 @@ data_dir="/opt/loadlibris"
 fetchlibris_done_dir="/opt/fetchlibris/done"
 
 bulkmarcimport_in_dir="$data_dir/in"
-bulkmarcimport_err_dir="$data_dir/bulkmarcimport_err"
+bulkmarcimport_err_dir="$data_dir/err"
 bulkmarcimport_in_archive_dir="$data_dir/in_archive"
 
-bulkmarcimport_bin="$koha_path/misc/migration_tools/bulkmarcimport.pl"
 bulkmarcimport_to_marc_plugin="Koha::Plugin::Se::Ub::Gu::MarcImport"
 bulkmarcimport_match="System-control-number,035a"
 

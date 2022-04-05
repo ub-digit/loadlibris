@@ -21,7 +21,7 @@ done
 for filepath in $(find "$bulkmarcimport_in_dir" -name '*.marc' | sort); do
   filename=$(basename "$filepath")
   #TODO: Errors are thrown away here? Probably for a reason
-  errors=$($koha_shell_bin -c /home/koha/koha-lab/current/misc/migration_tools/bulkmarcimport.pl\ -b\ -file\ \"$filepath\"\ -record_id_match\ -insert\ -update\ -c\=MARC21\ -tomarcplugin\ \"Koha::Plugin::Se::Ub::Gu::MarcImport\" $koha_instance 2>&1 1>/dev/null)
+  errors=$($koha_shell_bin -c $koha_path/misc/migration_tools/bulkmarcimport.pl\ -b\ -file\ \"$filepath\"\ -record_id_match\ -insert\ -update\ -c\=MARC21\ -tomarcplugin\ \"Koha::Plugin::Se::Ub::Gu::MarcImport\" $koha_instance 2>&1 1>/dev/null)
   if [ $? -eq 0 ]; then
     log_info "bulkmarcimport successfully processed \"$filename\""
     mv "$filepath" "$bulkmarcimport_done_dir/"
