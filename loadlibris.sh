@@ -1,8 +1,14 @@
 #!/bin/bash
 script_dir="$(dirname "$(readlink -f "$0")")"
-source "$script_dir/loadlibris.sh.conf"
-
 koha_shell_bin="$script_dir/koha-shell"
+
+if [ -z "$1" ]; then
+  conf_file="$script_dir/loadlibris.sh.conf"
+else
+  conf_file="$1"
+fi
+
+source "$conf_file"
 
 function log_error {
   logger -s -p syslog.err "$1" 2>> "$loadlibris_log_dir/loadlibris"
